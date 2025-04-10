@@ -107,7 +107,22 @@ console.log(sliced)
 let fullsliced=combined.slice(); // complete arr will be copied
 console.log(fullsliced)
 
-// meth creating a copy 
+// creating a copy using spread operator
 let another=[...combined]
 
+// join and split meth
+let numbs=[1, 6, 3, 7,4, 2,556]
+console.log(numbs)
+const joined= numbs.join('.')
+console.log(joined)
+
+let msg= "This is a message"
+let parts= msg.split(' ')
+let parts2=msg.split('')
+console.log(parts)
+console.log(parts2)
+
+// sort meth
+numbs.sort();
+console.log(numbs);
 
