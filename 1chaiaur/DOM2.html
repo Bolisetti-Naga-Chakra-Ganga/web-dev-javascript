@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>javascript</li>
+        <li>html</li>
+        <li>css</li>
+    </ul>
+    <script>
+        /*
+        function addlanguage(langname){
+            const li=document.createElement('li')
+            li.innerHTML=`${langname}`
+            document.querySelector('.language').appendChild(li)
+            
+        }
+        addlanguage("python")
+        */
+
+        // best practice 
+        function addoptlanguage(language){
+            const li=document.createElement('li')
+            li.appendChild(document.createTextNode(language))  // text node is to create a text node to insert text
+            document.querySelector('.language').appendChild(li)
+        }
+        addoptlanguage('golang')
+
+        //editing the elements
+        const secndlang= document.querySelector("li:nth-child(2)")
+        console.log(document.querySelector("li:nth-child(2)"))
+        // secndlang.innerHTML="Mojo"
+        const newli=document.createElement('li')
+        newli.textContent="Mojo"
+        secndlang.replaceWith(newli)
+    </script>
+    
+</body>
+</html>

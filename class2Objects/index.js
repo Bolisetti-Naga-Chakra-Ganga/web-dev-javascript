@@ -1,12 +1,12 @@
 /*
 console.log('hello');
 
-// creating object - way1
+// creating object - way1 (object literals)
 let rectangle={
     // properties
     length:1, 
     breadth: 2, 
-    // addind behaviours / methods
+    // adding behaviour / methods
     draw: function(){
         console.log("drawing rectangle");
     }

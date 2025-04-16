@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Object literal
+        /*
+        const user={
+            username: "hitesh",
+            login:8,
+            signedin:true,
+
+            getDetails:function(){
+                // console.log(`username: ${username}`// throughs an error
+                console.log(`username: ${this.username}`)
+                console.log(this) //prints the complete object
+            }
+        }
+        console.log(user.getDetails());
+        */
+
+        function user(username,logincount,islogin){
+            this.username=username;
+            this.count=logincount;
+            this.islogin=islogin;
+            // return this // it will work even without this return function
+        }
+        const user1= new user("hitesh", 12, true)
+        const user2= new user("kalyan", 23, false) // without using new keyword it will override the user1 details
+        console.log(user1)
+        console.log(user2)
+    </script>
+</body>
+</html> nnnb

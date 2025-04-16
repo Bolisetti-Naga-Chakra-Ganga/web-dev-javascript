@@ -38,6 +38,7 @@ let person2={
 try{
     person2.fullname=true;
 }
+// the error thrown to try block will be catched by catch block and will be stored in e
 catch(e){
     alert(e);
 }

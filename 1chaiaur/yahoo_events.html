@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            height: 400px;
+            width: 200px;
+            border: 2px solid black;
+            background-color: rgb(140, 140, 9);
+        }
+        .box{
+            height: 70px;
+            width: 120px;
+            background-color: rgb(210, 210, 147);
+            border: 2px solid black;
+            margin: 10px;
+            
+        }        
+    </style>
+</head>
+<body>
+    <div>
+        <div id="container">
+            <div id="box1" class="box">BOX1</div>
+            <div id="box2" class="box">BOX2</div>
+            <!-- this approach is not feasable. if we scale this application then it will create problem -->
+            <!-- <div id="box3" class="box" onclick="alert('hello')">BOX3</div> -->
+            <div id="box3" class="box">BOX3</div>
+            <div id="box4" class="box">BOX4</div>
+            <a href="https://google.com" id="google">google</a>
+        </div>
+    </div>
+    <script>
+        // ***** Approach 2 *****//
+        // document.getElementById('box1').onclick=function(){
+        //     alert('box 1 clicked')
+        // }
+        
+        let a=document.getElementById('box1')
+        let b=document.getElementById('container')
+        // b.addEventListener('click', function(e){
+        //     console.log("clicked on images")
+        // }, false)
+        a.addEventListener('click', function(e){
+            console.log("clicked on box1")
+            this.style.borderRadius="50%"
+            console.log(event)
+            console.log(event.target)
+            console.log(event.type)
+            e.stopPropagation()  // to prevent propagation/bubbling
+        }, false)
+        /*
+        document.getElementById("container").addEventListener('click',function(e){
+            console.log("container clicked")
+            this.style.background="pink"
+        },false)
+
+        let c=document.getElementById("box3")
+        c.addEventListener('click',function(e){
+            this.style.background="green"
+        })
+        let d=document.getElementById("box4")
+        function abc(){
+            d.style.background="pink"
+        }
+        d.addEventListener('click',abc);
+        
+        // to remove the event 
+        d.removeEventListener('click',abc)
+
+        let f=document.getElementById("google")
+        f.addEventListener('click',function(e){
+            e.preventDefault();  // to prevent default actions
+            e.stopPropagation()  // to prevent bubbling
+            console.log("google clicked")
+        },false)
+        */
+    
+
+        /*
+
+        document.querySelector("#container").addEventListener('click',function(e){
+            console.log(e.target.parentNode);
+            let k=e.target.parentNode;
+            // k.remove()
+            k.parentNode.removeChild(k)
+        })
+
+        */
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg-black{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-black">
+        <h1 class="heading">dom learning on chai aur code</h1>
+        <p id="text">Lorem, ipsum dolor sit amet <span style="background-color: greenyellow;">adipisicing elit. </span> Perspiciatis, ut?</p>
+        <input type="password" name="" id="">
+        <ul>
+            <li class="list-items">one</li>
+            <li class="list-items">two</li>
+            <li class="list-items">three</li>
+            <li class="list-items">four</li>
+            <li class="list-items">five</li>
+        </ul>
+    </div>
+    <script>
+        /*
+        console.log(text.textContent)
+        console.log(text.innerHTML) //returns complete info including child and attributes
+        console.log(text.innerText)
+        console.log(document.querySelector('input[type="password"]'))
+        console.log(document.getElementById("text").childNodes[0])
+
+        list=document.querySelectorAll('li')  //returns nodelist
+        console.log(list)
+        list.forEach((li)=>{
+            li.style.backgroundColor="green"
+        });
+
+        */
+        licls=document.getElementsByClassName("list-items")  // returns html collection
+        // console.log(licls)
+        let l=document.querySelector("ul").firstChild
+        console.log(l)
+        l.innerText= "one1"
+
+    </script>
+</body>
+</html>

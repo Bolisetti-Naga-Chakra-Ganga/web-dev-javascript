@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #313131;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+
+    <script>
+        /*
+        function outer(){
+            let username ="hitesh"
+            function inner(){
+                let secret="my123"
+                console.log("inner one",username)
+            }
+            function innerTwo(){
+                console.log("inner two", username)
+                console.log(secret)
+            }
+            inner()
+            innerTwo()
+        }
+        outer()
+        console.log("outer",username)
+        */
+
+        function make(){
+            const name= "Mozilla";
+            function displayName(){
+                console.log(name)
+            }
+            return displayName
+        }
+
+        const myfun= make();
+        console.log(myfun())
+
+    </script>
+    <script>
+        document.getElementById("orange").onclick= function(){
+            document.body.style.backgroundColor='orange'
+        }
+        document.getElementById("green").onclick= function(){
+            document.body.style.backgroundColor='green'
+        }
+        function clickHandler(color){
+            // document.body.style.backgroundColor=`${color}`
+            return function(){
+                document.body.style.backgroundColor=`${color}`
+                
+            }
+        }
+        document.getElementById('orange').onclick=clickHandler("orange")
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>by thapa technical</title>
+    <style>
+        body{
+            background-color: rgb(30, 35, 104);
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            margin-left: 200px;
+        }
+        p{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2rem;
+        }
+        button{
+            height: 30px;
+            width: 90px;
+            border: 2px solid black;
+            border-radius: 6px;
+            background-color: rgb(235, 188, 22);
+            margin-top: 100px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>lets conunt something</p>
+        <p id="text"></p>
+        <p id="count"></p>
+        <button id="start">start</button>
+        <button id="stop">stop</button>
+    </div>
+    <script>
+
+        // set timeout
+       const sayhi= ()=>{
+            console.log("hello")
+        }
+        const greeting= setTimeout(sayhi, 2000)
+
+        // removing settimeout 
+        // clearInterval(greeting)
+        document.querySelector('#stop').addEventListener('click',()=>{
+            clearTimeout(greeting)
+            console.log("stopped")
+        })
+
+        // set interval 
+        const sayhello=(str)=>{
+            console.log(str)
+        }
+        const k= setInterval(sayhello, 1000, "hi")
+        clearInterval(k)
+
+        a=document.getElementById("start")
+        b=document.getElementById("stop")
+        c=document.getElementById("text")
+        a.addEventListener("click", function(){
+            num=0
+            console.log("clicked")
+            c.innerHTML="Loading"
+            p=setInterval(()=>{
+                count.innerHTML=`${num}`
+                num++;
+            }, 1000)
+        })
+        b.addEventListener("click",function(){
+            clearInterval(p)
+        })
+    </script>
+
+</body>
+</html>
